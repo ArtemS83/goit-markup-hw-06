@@ -697,8 +697,13 @@ img {
 .footer-address .link:not(:last-child) {
   margin-bottom: 9px;
 }
-.footer-box:not(:last-child) {
-  margin-right: 69px;
+.footer-box-address {
+  /* margin-right: 69px; */
+  /* По макету стоит 69px,но не корректно узазаны границы первого бдока с лого */
+  margin-right: 83px;
+}
+.footer-box-social {
+  margin-right: 94px;
 }
 .footer-social-list {
   display: flex;
@@ -726,4 +731,56 @@ img {
 
 .footer-social-item > a:hover {
   background-color: var(--hover-color);
+}
+.footer-form {
+  display: flex;
+}
+.footer-form-input {
+  margin-right: 12px;
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  /* identical to box height, or 125% */
+
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+
+  background-color: #2f303a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+.footer-form-button {
+  display: inline-flex;
+  align-items: center;
+
+  border-width: 0;
+  padding-top: 10px;
+  padding-right: 29px;
+  padding-bottom: 10px;
+  padding-left: 28px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  color: var(--main-write-color);
+  background-color: var(--hover-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.footer-form-button .icon {
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+  fill: var(--main-write-color);
 }
