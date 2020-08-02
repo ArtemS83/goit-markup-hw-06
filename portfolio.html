@@ -322,7 +322,7 @@
     <!-- Подвал сайта -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-box">
+        <div class="footer-box-address">
           <a class="logo link" href="./index.html" lang="en"
             ><span class="logo-web">Web</span>
             <span class="white-studio">Studio</span></a
@@ -345,7 +345,7 @@
           </address>
         </div>
 
-        <div class="footer-box">
+        <div class="footer-box-social">
           <b class="footer-join">присоединяйтесь</b>
           <ul class="footer-social-list list">
             <li class="footer-social-item">
@@ -358,9 +358,8 @@
             <li class="footer-social-item">
               <a href="" target="_blank" aria-label="иконка твитера"
                 ><svg class="icon">
-                  <use href="./images/sprite.svg#icon-twitter"></use>
-                </svg>
-              </a>
+                  <use href="./images/sprite.svg#icon-twitter"></use></svg
+              ></a>
             </li>
             <li class="footer-social-item">
               <a href="" target="_blank" aria-label="иконка фейсбука">
@@ -372,13 +371,30 @@
             <li class="footer-social-item">
               <a href="" target="_blank" aria-label="иконка ликедина"
                 ><svg class="icon">
-                  <use href="./images/sprite.svg#icon-linkedin"></use>
-                </svg>
-              </a>
+                  <use href="./images/sprite.svg#icon-linkedin"></use></svg
+              ></a>
             </li>
           </ul>
         </div>
+        <div class="footer-box-form">
+          <b class="footer-join">Подпишитесь на рассылку</b>
+          <form class="footer-form" action="" method="post" name="followered">
+            <input
+              class="footer-form-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            /><button class="footer-form-button" type="submit">
+              Подписаться
+              <svg class="icon">
+                <use href="./images/sprite.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+    <!-- Скрипт для подключения модального окна -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>
