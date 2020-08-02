@@ -799,6 +799,7 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  transform: scale3d(0, 0, 0);
 }
 .modal {
   position: absolute;
@@ -826,24 +827,27 @@ img {
     transform: scale3d(0, 0, 0);
   }
 
-  50% {
-    transform: scale3d(0.5, 0.5, 0.5);
-  }
-
   to {
     transform: scale3d(1, 1, 1);
   }
 }
 /* Анимация Модального окна */
-.is-hidden.animate-modal {
+.backdrop.animate-modal {
+  -webkit-animation-name: scale;
+  -webkit-animation-duration: var(--transition-duration-250ms);
+  -webkit-animation-timing-function: var(--cubic-bezier);
+  animation-name: scale;
+  animation-duration: var(--transition-duration-250ms);
+  animation-timing-function: var(--cubic-bezier);
+}
+.backdrop.is-hidden.animate-modal {
+  -webkit-animation-name: scale;
+  -webkit-animation-duration: var(--transition-duration-250ms);
+  -webkit-animation-timing-function: var(--cubic-bezier);
+  -webkit-animation-direction: reverse;
   animation-name: scale;
   animation-duration: var(--transition-duration-250ms);
   animation-timing-function: var(--cubic-bezier);
 
   animation-direction: reverse;
-}
-.backdrop.animate-modal {
-  animation-name: scale;
-  animation-duration: var(--transition-duration-250ms);
-  animation-timing-function: var(--cubic-bezier);
 }
