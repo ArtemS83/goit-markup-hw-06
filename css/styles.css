@@ -279,12 +279,12 @@ img {
 
   transition: background-color var(--transition-duration-250ms)
       var(--cubic-bezier),
-    border var(--transition-duration-250ms) var(--cubic-bezier);
+    outline var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .hero-button:hover,
 .hero-button:focus {
   background-color: #2196f3;
-  border: 1px solid var(--main-write-color);
+  outline: 1px solid var(--main-write-color);
 }
 
 /* Секция О нас */
@@ -783,13 +783,13 @@ img {
   cursor: pointer;
   outline: none;
 
-  transition: border var(--transition-duration-250ms) var(--cubic-bezier);
+  transition: outline var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .footer-form-button:hover,
 .footer-form-input:hover,
 .footer-form-button:focus,
 .footer-form-input:focus {
-  border: 1px solid var(--main-write-color);
+  outline: 1px solid var(--main-write-color);
 }
 .footer-form-button .icon {
   margin-left: 10px;
