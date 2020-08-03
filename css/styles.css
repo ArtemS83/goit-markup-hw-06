@@ -278,11 +278,13 @@ img {
   outline: none;
 
   transition: background-color var(--transition-duration-250ms)
-    var(--cubic-bezier);
+      var(--cubic-bezier),
+    border var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .hero-button:hover,
 .hero-button:focus {
   background-color: #2196f3;
+  border: 1px solid var(--main-write-color);
 }
 
 /* Секция О нас */
@@ -454,10 +456,12 @@ img {
   transition: fill var(--transition-duration-250ms) var(--cubic-bezier);
 }
 
-.name-social-item > a:hover {
+.name-social-item > a:hover,
+.name-social-item > a:focus {
   background-color: var(--hover-color);
 }
-.name-social-item > a:hover .icon {
+.name-social-item > a:hover .icon,
+.name-social-item > a:focus .icon {
   fill: var(--main-write-color);
 }
 /* Секция Постоянные клиенты */
@@ -745,19 +749,17 @@ img {
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
+  padding-right: 16px;
 
   font-size: 16px;
   line-height: 1.25;
-  /* identical to box height, or 125% */
-
-  display: flex;
-  align-items: center;
   color: rgba(255, 255, 255, 0.6);
 
   background-color: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  transition: border var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .footer-form-button {
   display: inline-flex;
@@ -780,6 +782,14 @@ img {
   border-radius: 4px;
   cursor: pointer;
   outline: none;
+
+  transition: border var(--transition-duration-250ms) var(--cubic-bezier);
+}
+.footer-form-button:hover,
+.footer-form-input:hover,
+.footer-form-button:focus,
+.footer-form-input:focus {
+  border: 1px solid var(--main-write-color);
 }
 .footer-form-button .icon {
   margin-left: 10px;
