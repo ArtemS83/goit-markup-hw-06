@@ -71,6 +71,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Убираем возможность изменять размер пользователю */
+textarea {
+  resize: none;
+}
 /* Скрываем визуально текст */
 .visually-hidden {
   position: absolute;
@@ -809,7 +813,6 @@ img {
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: scale3d(0, 0, 0);
 }
 .form-modal {
   position: absolute;
@@ -817,13 +820,12 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  min-height: 581px;
   padding-left: 40px;
   padding-top: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
-  text-align: center;
 
   background-color: var(--main-background-color);
 
@@ -842,17 +844,107 @@ img {
 
   background-color: var(--main-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  /* opacity: 0; */
   cursor: pointer;
 }
 .btn-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: 11px;
   height: 11px;
 }
-/* Подключение Аннимации на Модальное окно */
+.form-modal-button:hover .btn-close,
+.form-modal-button:focus .btn-close {
+  fill: var(--hover-color);
+}
+.form-modal-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+
+}
+.form-modal-comments {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.form-modal-checkbox {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.form-modal-input,
+.form-modal-textarea {
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+.form-modal-input {
+  width: 448px;
+  height: 40px;
+}
+.form-modal-textarea {
+  width: 448px;
+  height: 120px;
+}
+.form-modal-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+}
+.form-modal-input,
+.form-modal-textarea,
+.form-modal-label {
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  
+  color: var(--text-color);
+}
+.form-modal-checkbox-label {
+  line-height: 1.71;
+  color: var(--text-color);
+}
+.form-modal-link {
+  color: var(--hover-color);
+  }
+ .form-modal-btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+  margin-left: auto;
+  margin-right: auto;
+   width: 200px;
+   height: 50px;
+
+   font-weight: bold;
+font-size: 16px;
+line-height: 1.87;
+letter-spacing: 0.06em;
+color: var(--main-write-color);
+
+   background-color: var(--hover-color);
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+border-color: transparent;
+cursor: pointer;
+ }
+  /* Подключение Аннимации на Модальное окно */
 @keyframes scale {
   from {
     transform: scale3d(0, 0, 0);
