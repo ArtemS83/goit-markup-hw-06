@@ -785,7 +785,6 @@ textarea {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
-  outline: none;
 
   transition: outline var(--transition-duration-250ms) var(--cubic-bezier);
 }
@@ -793,7 +792,7 @@ textarea {
 .footer-form-input:hover,
 .footer-form-button:focus,
 .footer-form-input:focus {
-  outline: 1px solid var(--main-write-color);
+  outline: 2px solid var(--main-write-color);
 }
 .footer-form-button .icon {
   margin-left: 10px;
@@ -852,8 +851,10 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 11px;
-  height: 11px;
+  width: 18px;
+  height: 18px;
+
+  transition: fill var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .form-modal-button:hover .btn-close,
 .form-modal-button:focus .btn-close {
@@ -863,7 +864,6 @@ textarea {
   display: flex;
   flex-direction: column;
   margin-bottom: 28px;
-
 }
 .form-modal-comments {
   display: flex;
@@ -884,18 +884,17 @@ textarea {
   padding-left: 16px;
   padding-right: 16px;
 
-
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
   cursor: pointer;
 }
 .form-modal-input {
-  width: 448px;
+  width: 100%;
   height: 40px;
 }
 .form-modal-textarea {
-  width: 448px;
+  width: 100%;
   height: 120px;
 }
 .form-modal-title {
@@ -912,7 +911,7 @@ textarea {
 .form-modal-label {
   line-height: 1.14;
   letter-spacing: 0.01em;
-  
+
   color: var(--text-color);
 }
 .form-modal-checkbox-label {
@@ -921,30 +920,31 @@ textarea {
 }
 .form-modal-link {
   color: var(--hover-color);
-  }
- .form-modal-btn {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   
+}
+.form-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   margin-left: auto;
   margin-right: auto;
-   width: 200px;
-   height: 50px;
+  width: 200px;
+  height: 50px;
 
-   font-weight: bold;
-font-size: 16px;
-line-height: 1.87;
-letter-spacing: 0.06em;
-color: var(--main-write-color);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--main-write-color);
 
-   background-color: var(--hover-color);
-   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-border-radius: 4px;
-border-color: transparent;
-cursor: pointer;
- }
-  /* Подключение Аннимации на Модальное окно */
+  background-color: var(--hover-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border-color: transparent;
+  cursor: pointer;
+}
+/* Подключение Аннимации на Модальное окно */
 @keyframes scale {
   from {
     transform: scale3d(0, 0, 0);
@@ -962,6 +962,7 @@ cursor: pointer;
   animation-name: scale;
   animation-duration: var(--transition-duration-250ms);
   animation-timing-function: var(--cubic-bezier);
+  animation-fill-mode: forwards;
 }
 .backdrop.is-hidden.animate-modal {
   -webkit-animation-name: scale;
@@ -971,6 +972,6 @@ cursor: pointer;
   animation-name: scale;
   animation-duration: var(--transition-duration-250ms);
   animation-timing-function: var(--cubic-bezier);
-
+  animation-fill-mode: forwards;
   animation-direction: reverse;
 }
