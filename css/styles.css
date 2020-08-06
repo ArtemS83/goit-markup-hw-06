@@ -746,6 +746,7 @@ textarea {
 .footer-form {
   display: flex;
 }
+
 .footer-form-input {
   margin-right: 12px;
   width: 358px;
@@ -755,14 +756,20 @@ textarea {
   padding-bottom: 15px;
   padding-right: 16px;
 
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
+  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 
   background-color: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  cursor: pointer;
+
   transition: border var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .footer-form-button {
@@ -909,9 +916,12 @@ textarea {
 .form-modal-input,
 .form-modal-textarea,
 .form-modal-label {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
-
   color: var(--text-color);
 }
 .form-modal-checkbox-label {
@@ -943,7 +953,16 @@ textarea {
   border-radius: 4px;
   border-color: transparent;
   cursor: pointer;
+  transition: background-color var(--transition-duration-250ms)
+      var(--cubic-bezier),
+    box-shadow var(--transition-duration-250ms) var(--cubic-bezier);
 }
+.form-modal-btn:hover,
+.form-modal-btn:focus {
+  background-color: #188ce8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 /* Подключение Аннимации на Модальное окно */
 @keyframes scale {
   from {
@@ -956,22 +975,13 @@ textarea {
 }
 /* Анимация Модального окна */
 .backdrop.animate-modal {
-  -webkit-animation-name: scale;
-  -webkit-animation-duration: var(--transition-duration-250ms);
-  -webkit-animation-timing-function: var(--cubic-bezier);
   animation-name: scale;
   animation-duration: var(--transition-duration-250ms);
   animation-timing-function: var(--cubic-bezier);
-  animation-fill-mode: forwards;
 }
 .backdrop.is-hidden.animate-modal {
-  -webkit-animation-name: scale;
-  -webkit-animation-duration: var(--transition-duration-250ms);
-  -webkit-animation-timing-function: var(--cubic-bezier);
-  -webkit-animation-direction: reverse;
   animation-name: scale;
   animation-duration: var(--transition-duration-250ms);
   animation-timing-function: var(--cubic-bezier);
-  animation-fill-mode: forwards;
   animation-direction: reverse;
 }

@@ -478,9 +478,9 @@
     </footer>
     <!-- Модальное окно -->
     <div class="backdrop is-hidden animate-modal" data-modal>
-      <form class="form-modal">
+      <form class="form-modal" action="#">
         <b class="form-modal-title">Оставьте свои данные, мы вам перезвоним</b>
-        <button class="form-modal-button" type="submit" data-modal-close>
+        <button class="form-modal-button" type="button" data-modal-close>
           <svg class="btn-close">
             <use href="./images/sprite.svg#icon-close"></use>
           </svg>
@@ -495,15 +495,33 @@
         </div>
         <div class="form-modal-field">
           <label class="form-modal-label" for="email">Почта</label>
-          <input class="form-modal-input" type="email" name="email" id="email" />
+          <input
+            class="form-modal-input"
+            type="email"
+            name="email"
+            id="email"
+          />
         </div>
         <div class="form-modal-comments">
           <label class="form-modal-label" for="comments">Комментарий</label>
-          <textarea class="form-modal-textarea" name="comments" id="comments"></textarea>
+          <textarea
+            class="form-modal-textarea"
+            name="comments"
+            id="comments"
+          ></textarea>
         </div>
         <div class="form-modal-checkbox">
-          <input class="form-modal-checkbox-input" type="checkbox" name="policy" id="policy">
-          <label class="form-modal-checkbox-label" for="policy">Соглашаюсь с рассылкой и принимаю <a class="form-modal-link" href="">Условия договора</a> </label>
+          <input
+            class="form-modal-checkbox-input"
+            type="checkbox"
+            name="policy"
+            id="policy"
+            value="accept-policy"
+          />
+          <label class="form-modal-checkbox-label" for="policy"
+            >Соглашаюсь с рассылкой и принимаю
+            <a class="form-modal-link" href="">Условия договора</a>
+          </label>
         </div>
         <button class="form-modal-btn" type="submit">Отправить</button>
       </form>
