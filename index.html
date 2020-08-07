@@ -510,16 +510,15 @@
         <div class="form-modal-comments-wrapper">
           <label class="form-modal-label" for="comments">Комментарий</label>
           <textarea class="form-modal-textarea" name="comments id="comments" placeholder=" "></textarea>
-        </div>
-        <div class="form-modal-checkbox-wrapper">
-          <input class="form-modal-checkbox visually-hidden" type="checkbox" name="policy" id="policy" value="accept-policy" required/>
-          <svg  class="form-modal-icon-check" id="policy">
+        </div>    
+          <label class="form-modal-checkbox-wrapper">
+            <input class="form-modal-checkbox visually-hidden" type="checkbox" name="policy" value="accept-policy" required/>
+          <svg  class="form-modal-icon-check">
             <use href="./images/sprite.svg#icon-check"></use>
           </svg>
-          <label class="form-modal-checkbox-label">Соглашаюсь с рассылкой и принимаю
-            <a class="form-modal-link" href="">Условия договора</a>
+            <span class="form-modal-checkbox-label">Соглашаюсь с рассылкой и принимаю
+              <a class="form-modal-link" href="">Условия договора</a></span>
           </label>
-        </div>
         <button class="form-modal-btn" type="submit">Отправить</button>
       </form>
     </div>

@@ -962,8 +962,11 @@ color: red;
 .form-modal-checkbox:checked ~ .form-modal-icon-check {
   border-color: transparent;
   background-color: var(--hover-color);
-
   }
+  /* Для доступности при фокусе на чекбокс зададим тень */
+ .form-modal-checkbox:focus ~ .form-modal-icon-check {
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+} 
 .form-modal-icon-check {
   margin-right: 8px;
   width: 16px;
@@ -972,6 +975,10 @@ color: red;
   border: 2px solid var(--main-title-color);
   border-radius: 2px;
   fill: var(--main-write-color);
+  
+  transition: background-color var(--transition-duration-250ms) var(--cubic-bezier),
+  background-color var(--transition-duration-250ms) var(--cubic-bezier),
+  box-shadow var(--transition-duration-250ms) var(--cubic-bezier) ;
 }
 .form-modal-link {
   color: var(--hover-color);
