@@ -882,6 +882,7 @@ textarea {
   flex-direction: column;
   margin-bottom: 28px;
 }
+
 .form-modal-comments-wrapper {
   position: relative;
 
@@ -908,8 +909,11 @@ textarea {
   border-radius: 4px;
 
   cursor: pointer;
+  transition: border-color var(--transition-duration-250ms) var(--cubic-bezier);
 }
 .form-modal-input {
+  width: 100%;
+  height: 40px;
   padding-left: 42px;
 }
 .form-modal-textarea {
@@ -920,10 +924,7 @@ textarea {
 .form-modal-comments-wrapper .form-modal-label {
   left: 16px;
 }
-.form-modal-input {
-  width: 100%;
-  height: 40px;
-}
+
 
 .form-modal-input,
 .form-modal-textarea,
@@ -940,6 +941,11 @@ textarea {
   position: absolute;
   left: 42px;
   top: 12px;
+
+  transition: font-size var(--transition-duration-250ms) var(--cubic-bezier),
+  line-height var(--transition-duration-250ms) var(--cubic-bezier),
+  color var(--transition-duration-250ms) var(--cubic-bezier),
+  transform var(--transition-duration-250ms) var(--cubic-bezier);
 }
 
 .form-modal-icon {
@@ -949,11 +955,47 @@ textarea {
 
   width: 18px;
   height: 18px;
+
+  transition: fill var(--transition-duration-250ms) var(--cubic-bezier);
+}
+.form-modal-input:focus + .form-modal-label,
+.form-modal-input:hover + .form-modal-label,
+.form-modal-input:not(:placeholder-shown) + .form-modal-label
+{
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--hover-color);
+
+  transform: translate(-28px, -30px);
+}
+.form-modal-input:focus ~ .form-modal-icon,
+.form-modal-input:hover ~ .form-modal-icon,
+.form-modal-input:not(:placeholder-shown) ~ .form-modal-icon
+{
+  fill: var(--hover-color);
+}
+.form-modal-input:focus,
+.form-modal-input:hover,
+.form-modal-input:not(:placeholder-shown),
+.form-modal-textarea:focus,
+.form-modal-textarea:hover,
+.form-modal-textarea:not(:placeholder-shown) {
+border-color: var(--hover-color);
+}
+.form-modal-textarea:focus + .form-modal-label,
+.form-modal-textarea:hover + .form-modal-label,
+.form-modal-textarea:not(:placeholder-shown) + .form-modal-label {
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--hover-color);
+
+  transform: translate(-2px, -30px);
 }
 
 .form-modal-checkbox-label {
   line-height: 1.71;
   color: var(--text-color);
+  cursor: pointer;
 }
 /* Cделаем временно подчеркивание для визуализации */
 /* .form-modal-checkbox:checked ~ .form-modal-checkbox-label {
@@ -964,7 +1006,8 @@ color: red;
   background-color: var(--hover-color);
   }
   /* Для доступности при фокусе на чекбокс зададим тень */
- .form-modal-checkbox:focus ~ .form-modal-icon-check {
+ .form-modal-checkbox:focus ~ .form-modal-icon-check,
+ .form-modal-checkbox:hover ~ .form-modal-icon-check {
   box-shadow: 0 0 6px rgba(0,0,0,0.5);
 } 
 .form-modal-icon-check {
@@ -975,6 +1018,7 @@ color: red;
   border: 2px solid var(--main-title-color);
   border-radius: 2px;
   fill: var(--main-write-color);
+  cursor: pointer;
   
   transition: background-color var(--transition-duration-250ms) var(--cubic-bezier),
   background-color var(--transition-duration-250ms) var(--cubic-bezier),
