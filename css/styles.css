@@ -37,7 +37,7 @@
   --hover-color: #2196f3;
   --background-color: #f5f4fa;
   --icon-color: #afb1b8;
-  --transition-duration-250ms: 2500ms; /* Сделано для проверки применения свойства путем увеличения,например до 2500ms */
+  --transition-duration-250ms: 250ms; /* Сделано для проверки применения свойства путем увеличения,например до 2500ms */
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
